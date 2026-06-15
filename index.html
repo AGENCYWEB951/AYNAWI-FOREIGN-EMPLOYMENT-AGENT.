@@ -63,23 +63,21 @@
             100% { transform: translateY(0px); }
         }
 
-        /* Merged & Unified Navigation Header */
+        /* Navigation Header */
         header {
-            background: rgba(209, 208, 206, 0.45); /* Muted tint that blends instantly into the layout background */
-            backdrop-filter: blur(12px); /* Blurred backdrop glassmorphism effect for code seamlessness */
-            -webkit-backdrop-filter: blur(12px);
+            background: linear-gradient(to bottom, var(--card-darker-white), var(--silver-light));
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: none; /* Removed harsh separating border lines */
-            box-shadow: none; /* Removed separating shadows to merge directly with layout content */
+            border-bottom: 2px solid var(--silver-dark);
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%; /* Aligned closely with page sections padding */
+            padding: 15px 5%;
         }
 
         .logo-area {
@@ -161,12 +159,13 @@
             box-shadow: 0 6px 20px rgba(123, 44, 191, 0.45);
         }
 
-        /* Hero Section - Shifted slightly up to mesh naturally beneath header */
+        /* Hero Section */
         .hero {
-            background: transparent; /* Makes background completely fluid with layout gradients */
-            padding: 80px 0 120px 0;
+            background: linear-gradient(135deg, var(--silver-light) 0%, var(--silver-dark) 100%);
+            padding: 120px 0;
             text-align: center;
             border-bottom: 2px solid var(--border-color);
+            box-shadow: inset 0 -10px 20px rgba(0,0,0,0.08);
         }
 
         .hero h2 {
@@ -222,4 +221,496 @@
             content: '';
             width: 80px;
             height: 4px;
-            background-color:
+            background-color: var(--primary-purple);
+            display: block;
+            margin: 12px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        /* Vector Art Wrappers */
+        .image-wrapper {
+            width: 100%;
+            max-width: 540px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            background-color: var(--card-darker-white);
+            border: 4px solid var(--silver-dark);
+            animation: floatEffect 6s ease-in-out infinite;
+        }
+
+        .image-wrapper svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Flyer Grid */
+        .flyer-banner {
+            background: linear-gradient(135deg, #4A148C, #7B2CBF);
+            padding: 45px;
+            border-radius: 18px;
+            margin-top: 50px;
+            color: #FFFFFF;
+            box-shadow: 0 10px 25px rgba(74, 20, 140, 0.3);
+        }
+
+        .flyer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            text-align: center;
+        }
+
+        .flyer-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .flyer-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .flyer-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .flyer-item h5 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--card-darker-white);
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        /* Data Tables */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--card-darker-white);
+        }
+
+        th, td {
+            padding: 18px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background: linear-gradient(to bottom, var(--dark-purple), #310A63);
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--silver-light);
+        }
+
+        tr:hover {
+            background-color: var(--silver-main) !important;
+        }
+
+        /* Pipeline Steps */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .step-card {
+            background: var(--card-darker-white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--primary-purple);
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+        }
+
+        .step-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+        }
+
+        /* Contact & Forms */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            background: var(--card-darker-white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            border: 1px solid var(--border-color);
+        }
+
+        form input, form select, form textarea {
+            padding: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            outline: none;
+            font-size: 1rem;
+            background-color: var(--silver-light);
+            color: var(--text-dark);
+        }
+
+        form input:focus, form select:focus, form textarea:focus {
+            border-color: var(--primary-purple);
+            background-color: #FFFFFF;
+            box-shadow: 0 0 10px rgba(123, 44, 191, 0.3);
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--dark-purple), #250346);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 50px 0;
+            border-top: 4px solid var(--silver-dark);
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 20px; }
+            nav ul { flex-direction: column; align-items: center; gap: 15px; }
+            .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+            .hero h2 { font-size: 2.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-box">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="silverShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#FFFFFF" />
+                                <stop offset="50%" stop-color="#DBDBDB" />
+                                <stop offset="100%" stop-color="#A9A9A9" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M50 15 L78 25 L70 65 C65 80 50 88 50 88 C50 88 35 80 30 65 L22 25 Z" fill="url(#silverShieldGrad)" stroke="#646464" stroke-width="1"/>
+                        <path d="M50 25 L68 32 L62 60 C58 72 50 78 50 78 C50 78 42 72 38 60 L32 32 Z" fill="#4A148C"/>
+                        <text x="50" y="58" fill="#DBDBDB" font-family="Arial, sans-serif" font-size="24" font-weight="900" text-anchor="middle">A</text>
+                    </svg>
+                </div>
+                <div class="brand-name">
+                    <h1>AYNAWI FOREIGN EMPLOYMENT</h1>
+                    <p>አይናዊ በዉጭ ሀገር ስራና ሰራተኛ አገናኝ</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#employers">For Employers</a></li>
+                    <li><a href="#candidates">For Candidates</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn">Register Online</a>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h2>Connecting Trusted Ethiopian Talent with Premium Gulf Households</h2>
+            <p>Providing fully legal, transparent, and certified recruitment pipelines for professional domestic staff deployments to Saudi Arabia and Kuwait.</p>
+            <a href="#candidates" class="btn" style="margin-right: 15px;">Job Seeker Entry</a>
+            <a href="#employers" class="btn" style="background-color: var(--dark-purple);">Hire Staff</a>
+            <br>
+            <div class="badge-box">
+                <span style="color: var(--dark-purple); font-weight: bold;">📜 Government Certified Legal Operations</span><br>
+                Operated fully in compliance with Ethiopia's Overseas Employment Proclamation No. 923/2016 and 1246/2021.
+            </div>
+        </div>
+    </div>
+
+    <section id="about">
+        <div class="container">
+            <h3 class="section-title">About Our Agency</h3>
+            <div class="grid-2">
+                <div>
+                    <p><strong>AYNAWI Foreign Employment Agent</strong> is a premium certified Private Employment Agency authorized to deliver seamless overseas human resource solutions. Under strict government regulatory frameworks, we bridge the gap between dedicated professionals and premium global households.</p>
+                    <br>
+                    <p>We take pride in our robust pre-departure processes, secure legal compliance mechanisms, and strong collaborative stance with our partner destination offices across the Middle East.</p>
+                    <br>
+                    <div style="background-color: var(--card-darker-white); padding: 25px; border-radius: 12px; border-left: 5px solid var(--dark-purple); border-top: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+                        <h4 style="color: var(--dark-purple); margin-bottom: 8px; font-weight: 700;">Executive Structure</h4>
+                        <p><strong>General Manager:</strong> Mr. TAMENE GELETA KEBEDE</p>
+                        <p><strong>Primary Markets:</strong> Kingdom of Saudi Arabia (KSA) & Kuwait</p>
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="silverBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#7B2CBF"/>
+                                <stop offset="50%" stop-color="#4A148C"/>
+                                <stop offset="100%" stop-color="#310A63"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="500" height="400" fill="url(#silverBgGrad)"/>
+                        
+                        <path d="M 0 250 Q 150 150 300 300 T 500 200 L 500 400 L 0 400 Z" fill="#250346" opacity="0.4"/>
+                        <circle cx="400" cy="100" r="60" fill="#DBDBDB" opacity="0.2"/>
+                        
+                        <path d="M280 260 L280 160 L340 110 L400 160 L400 260 Z" fill="#DBDBDB"/>
+                        <rect x="320" y="200" width="40" height="60" fill="#A9A9A9"/>
+                        <circle cx="340" cy="140" r="12" fill="#7B2CBF"/>
+                        
+                        <g transform="translate(60, 90)">
+                            <text x="0" y="40" fill="#FFFFFF" font-size="28" font-weight="800" font-family="sans-serif">AYNAWI CARE</text>
+                            <text x="0" y="65" fill="#DBDBDB" font-size="14" font-weight="700" letter-spacing="1.5">PROFESSIONAL WORKFORCE</text>
+                            
+                            <circle cx="10" cy="115" r="8" fill="#DBDBDB"/>
+                            <text x="7" y="119" fill="#4A148C" font-size="11" font-weight="900">✓</text>
+                            <text x="28" y="120" fill="#FFFFFF" font-size="14" font-weight="600">Vetted Domestic Managers</text>
+                            
+                            <circle cx="10" cy="155" r="8" fill="#DBDBDB"/>
+                            <text x="7" y="119" transform="translate(0,40)" fill="#4A148C" font-size="11" font-weight="900">✓</text>
+                            <text x="28" y="160" fill="#FFFFFF" font-size="14" font-weight="600">Cultural Orientation Passed</text>
+                            
+                            <circle cx="10" cy="195" r="8" fill="#DBDBDB"/>
+                            <text x="7" y="119" transform="translate(0,80)" fill="#4A148C" font-size="11" font-weight="900">✓</text>
+                            <text x="28" y="195" fill="#FFFFFF" font-size="14" font-weight="600">100% Legal Safe Pathways</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="employers">
+        <div class="container">
+            <h3 class="section-title">For Employers</h3>
+            
+            <div class="grid-2" style="margin-bottom: 40px;">
+                <div class="image-wrapper">
+                    <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="500" height="400" fill="#C0C0C0"/>
+                        <rect width="500" height="75" fill="#4A148C"/>
+                        <text x="30" y="45" fill="#FFFFFF" font-size="18" font-weight="700" font-family="sans-serif">Candidate Vetting Dashboard</text>
+                        <rect x="380" y="25" width="90" height="28" rx="14" fill="#DBDBDB"/>
+                        <text x="403" y="43" fill="#4A148C" font-size="12" font-weight="800" font-family="sans-serif">PASSED</text>
+                        
+                        <g transform="translate(25, 100)">
+                            <rect width="450" height="75" rx="10" fill="#DBDBDB" stroke="#A9A9A9" stroke-width="1.5"/>
+                            <circle cx="40" cy="38" r="22" fill="#E5E4E2"/>
+                            <text x="30" y="45" font-size="20">🧹</text>
+                            <text x="80" y="33" fill="#1C2833" font-size="15" font-weight="700" font-family="sans-serif">Housekeeping Excellence</text>
+                            <text x="80" y="53" fill="#4D5656" font-size="12" font-family="sans-serif">Sanitation, laundering systems, and structural organization</text>
+                            
+                            <rect y="90" width="450" height="75" rx="10" fill="#DBDBDB" stroke="#A9A9A9" stroke-width="1.5"/>
+                            <circle cx="40" cy="128" r="22" fill="#E5E4E2"/>
+                            <text x="30" y="135" font-size="20">🍳</text>
+                            <text x="80" y="123" fill="#1C2833" font-size="15" font-weight="700" font-family="sans-serif">Culinary Adaptability Training</text>
+                            <text x="80" y="143" fill="#4D5656" font-size="12" font-family="sans-serif">Orientation complete for traditional Middle Eastern cuisine</text>
+                            
+                            <rect y="180" width="450" height="75" rx="10" fill="#DBDBDB" stroke="#A9A9A9" stroke-width="1.5"/>
+                            <circle cx="40" cy="218" r="22" fill="#E5E4E2"/>
+                            <text x="30" y="225" font-size="20">👶</text>
+                            <text x="80" y="213" fill="#1C2833" font-size="15" font-weight="700" font-family="sans-serif">Family & Care Support</text>
+                            <text x="80" y="233" fill="#4D5656" font-size="12" font-family="sans-serif">Structured care paths for children and elderly routines</text>
+                        </g>
+                    </svg>
+                </div>
+                <div>
+                    <h4 style="color: var(--dark-purple); margin-bottom: 20px; font-weight: 700; font-size: 1.5rem;">Candidate Profiles & Capabilities</h4>
+                    <p style="margin-bottom: 20px;">All selected candidates match rigorous eligibility rules and standard background verifications before final visa issuance:</p>
+                    
+                    <ul style="margin-left: 20px; margin-bottom: 25px; line-height: 2; font-weight: 500;">
+                        <li><strong>Age Eligibility:</strong> Legally verified to be above 21 years old.</li>
+                        <li><strong>Core Skills:</strong> Full general housekeeping, meticulous organizing, professional laundering, and space care management.</li>
+                        <li><strong>Domestic Care:</strong> Support for children's routines, elderly family assistance schedules, and daily household operational tasks.</li>
+                        <li><strong>Adaptability:</strong> Fully trained to learn regional Middle Eastern and traditional Arabic culinary practices.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flyer-banner">
+                <h4 style="text-align: center; margin-bottom: 30px; font-weight: 800; font-size: 1.6rem;">Guaranteed Core Contractual Qualities</h4>
+                <div class="flyer-grid">
+                    <div class="flyer-item">
+                        <span class="flyer-icon">💰</span>
+                        <h5>Good Salary / ጥሩ ደሞዝ</h5>
+                        <p>Stable, highly competitive market rates</p>
+                    </div>
+                    <div class="flyer-item">
+                        <span class="flyer-icon">🪪</span>
+                        <h5>Residence Visa / የቪዛ ፈቃድ</h5>
+                        <p>Completely legal government structural residency</p>
+                    </div>
+                    <div class="flyer-item">
+                        <span class="flyer-icon">📅</span>
+                        <h5>One Day Off / በሳምንት አንድ ቀን</h5>
+                        <p>24 continuous hours of guaranteed weekly rest</p>
+                    </div>
+                    <div class="flyer-item">
+                        <span class="flyer-icon">🛡️</span>
+                        <h5>Safe Environment / ሰላማዊ አካባቢ</h5>
+                        <p>Fully vetted, protected, and respectful workplaces</p>
+                    </div>
+                </div>
+            </div>
+
+            <h4 style="color: var(--dark-purple); margin-top: 50px; margin-bottom: 20px; font-weight: 700; font-size: 1.5rem;">Legal Framework & Contractual Standards</h4>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Recruitment Feature</th>
+                            <th>🇸🇦 Saudi Arabia Standards</th>
+                            <th>🇰🇼 Kuwait Standards</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Standard Salary Structure</strong></td>
+                            <td>SAR 1,000 to SAR 1,200 monthly</td>
+                            <td>KWD 100 to KWD 110 monthly</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Financial Protection</strong></td>
+                            <td>Registered via Wage Protection System (WPS)</td>
+                            <td>Legally overseen by Public Authority for Manpower (PAM)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Working & Rest Hours</strong></td>
+                            <td>Max 10 hours/day; 30-min break after 5 hours</td>
+                            <td>Guaranteed standard daily and weekly rest periods</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Weekly Rest Rights</strong></td>
+                            <td>1 full day off per week (24 continuous hours) paid</td>
+                            <td>1 full day of paid weekly rest</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Guarantee / Probation</strong></td>
+                            <td>Up to 90 days (Refund/replacement via Musaned)</td>
+                            <td>6-month mandatory agency guarantee period</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Basic Amenities Provided</strong></td>
+                            <td>Free food, medical insurance, and accommodation</td>
+                            <td>Decent living quarters, food, medical care</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Term Completion Benefits</strong></td>
+                            <td>Paid sick leave; mandatory return flight ticket</td>
+                            <td>End-of-service indemnity (1 month wage/year); return ticket</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="candidates">
+        <div class="container">
+            <h3 class="section-title">For Job Seekers (Candidates)</h3>
+            <p style="text-align: center; margin-bottom: 50px; font-size: 1.2rem; color: var(--text-muted);">Our simple four-step deployment system ensures transparent, fast, and secure journeys abroad:</p>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h4 style="font-weight: 700; color: var(--dark-purple); margin-bottom: 10px;">Online Sign-up</h4>
+                    <p>Submit your passport copy, passport photos, and contact credentials through our system.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h4 style="font-weight: 700; color: var(--dark-purple); margin-bottom: 10px;">Vetting & Testing</h4>
+                    <p>Attend our initial screening sessions, medical checks, and skill-level documentation reviews.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h4 style="font-weight: 700; color: var(--dark-purple); margin-bottom: 10px;">Visa Endorsement</h4>
+                    <p>Our specialists process unified contracts, handle embassy verification, and secure flight bookings.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <h4 style="font-weight: 700; color: var(--dark-purple); margin-bottom: 10px;">Pre-Flight Briefing</h4>
+                    <p>Receive cultural alignment, emergency contact profiles, and labor law training before departure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h3 class="section-title">Contact Our Office</h3>
+            <div class="grid-2">
+                <div>
+                    <h4 style="color: var(--dark-purple); margin-bottom: 20px; font-weight: 700; font-size: 1.4rem;">Business Footprint</h4>
+                    <ul style="list-style: none; line-height: 2.2; font-size: 1.1rem;">
+                        <li><strong>Region/City:</strong> Arada, Addis Ababa, Ethiopia</li>
+                        <li><strong>Sub City/Woreda:</strong> Woreda 02</li>
+                        <li><strong>House Number:</strong> 399/101/ሰ</li>
+                        <li><strong>Phone Number:</strong> +251 926 689 442</li>
+                        <li><strong>Official Email:</strong> aynawiagency2024@gmail.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--dark-purple); margin-bottom: 20px; font-weight: 700; font-size: 1.4rem;">Send Direct Inquiry</h4>
+                    <form onsubmit="event.preventDefault(); alert('Thank you for registering. Our human resource office will contact you via phone shortly.');">
+                        <input type="text" placeholder="Your Full Name" required>
+                        <input type="email" placeholder="Your Email Address" required>
+                        <select required>
+                            <option value="" disabled selected>Select Your Registration Profile</option>
+                            <option>I am a Candidate (Job Seeker)</option>
+                            <option>I am an Employer / Middle East Agency Partner</option>
+                        </select>
+                        <textarea placeholder="Write your staffing requirements or specific questions here..." rows="4" required></textarea>
+                        <button type="submit" class="btn">Send Secure Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AYNAWI Foreign Employment Agent. All Rights Reserved.</p>
+            <p style="font-size: 0.85rem; margin-top: 12px; opacity: 0.75; font-weight: 400; max-width: 700px; margin-left: auto; margin-right: auto;">Licensed in full accordance with Ethiopian Overseas Employment Proclamation No. 923/2016 & 1246/2021.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
