@@ -105,12 +105,6 @@
             transform: scale(1.08) rotate(2deg);
         }
 
-        .logo-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
         .brand-name h1 {
             font-size: 1.2rem;
             color: var(--dark-purple);
@@ -268,11 +262,10 @@
             box-shadow: 0 16px 35px rgba(123, 44, 191, 0.2);
         }
 
-        .image-wrapper img {
+        .image-wrapper svg {
             width: 100%;
             height: auto;
             display: block;
-            object-fit: cover;
         }
 
         /* Flyer Grid */
@@ -456,7 +449,18 @@
         <div class="nav-container">
             <div class="logo-area">
                 <div class="logo-box">
-                    <img src="logo.jpg.jpg" alt="AYNAWI Official Logo">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#7B2CBF" />
+                                <stop offset="100%" stop-color="#4A148C" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="100" height="100" rx="12" fill="url(#logoGrad)"/>
+                        <path d="M25 75 L42 30 L58 30 L75 75" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <path d="M33 55 L67 55" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" fill="none"/>
+                        <circle cx="50" cy="22" r="6" fill="#F3E5F5"/>
+                    </svg>
                 </div>
                 <div class="brand-name">
                     <h1>AYNAWI FOREIGN EMPLOYMENT AGENT</h1>
@@ -506,7 +510,38 @@
                     </div>
                 </div>
                 <div class="image-wrapper">
-                    <img src="housemaid.jpg.jpg" alt="AYNAWI Ethiopian Housemaid Flyer Portfolio">
+                    <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="flyerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#4A148C" />
+                                <stop offset="100%" stop-color="#7B2CBF" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="500" height="400" fill="url(#flyerGrad)"/>
+                        <circle cx="430" cy="80" r="120" fill="#FFFFFF" opacity="0.1"/>
+                        <circle cx="50" cy="350" r="90" fill="#FFFFFF" opacity="0.07"/>
+                        
+                        <path d="M320 280 L320 180 L380 130 L440 180 L440 280 Z" fill="#FFFFFF" opacity="0.95"/>
+                        <rect x="360" y="220" width="40" height="60" fill="#7B2CBF"/>
+                        <rect x="345" y="170" width="25" height="25" fill="#E0B0FF"/>
+                        <rect x="390" y="170" width="25" height="25" fill="#E0B0FF"/>
+                        
+                        <text x="40" y="80" fill="#FFFFFF" font-family="'Segoe UI', sans-serif" font-size="28" font-weight="800">AYNAWI AGENCY</text>
+                        <text x="40" y="120" fill="#E0B0FF" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" letter-spacing="1">PREMIUM DEPLOYMENT</text>
+                        
+                        <rect x="40" y="160" width="220" height="32" rx="6" fill="#FFFFFF" opacity="0.2"/>
+                        <text x="52" y="182" fill="#FFFFFF" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700">✓ 100% Government Approved</text>
+                        
+                        <rect x="40" y="205" width="220" height="32" rx="6" fill="#FFFFFF" opacity="0.2"/>
+                        <text x="52" y="227" fill="#FFFFFF" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700">✓ Certified Skill Matrix Vetting</text>
+                        
+                        <rect x="40" y="250" width="220" height="32" rx="6" fill="#FFFFFF" opacity="0.2"/>
+                        <text x="52" y="272" fill="#FFFFFF" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700">✓ Secure Financial Channels</text>
+                        
+                        <rect x="0" y="330" width="500" height="70" fill="#310A63"/>
+                        <text x="40" y="370" fill="#FFFFFF" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="700">Reliable Domestic Placements</text>
+                        <text x="440" y="371" fill="#E0B0FF" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="bold">⚖</text>
+                    </svg>
                 </div>
             </div>
         </div>
@@ -518,7 +553,34 @@
             
             <div class="grid-2" style="margin-bottom: 40px;">
                 <div class="image-wrapper">
-                    <img src="housemaid1.jpg.png" alt="Ethiopian Housekeeper Skills Vetting Matrix">
+                    <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="500" height="400" fill="#F8F9FA"/>
+                        <rect x="15" y="15" width="470" height="370" rx="10" fill="#FFFFFF" stroke="#DEE2E6" stroke-width="2"/>
+                        
+                        <path d="M15 15 J 485 15 L485 80 L15 80 Z" fill="#7B2CBF"/>
+                        <rect x="15" y="15" width="470" height="65" rx="10" fill="#7B2CBF"/>
+                        <rect x="15" y="50" width="470" height="30" fill="#7B2CBF"/>
+                        
+                        <text x="40" y="54" fill="#FFFFFF" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="700">Vetting Matrix & Capabilities</text>
+                        
+                        <rect x="40" y="110" width="420" height="70" rx="8" fill="#FDFBFF" stroke="#E6D5F5" stroke-width="1.5"/>
+                        <circle cx="75" cy="145" r="20" fill="#F3E5F5"/>
+                        <text x="70" y="151" fill="#7B2CBF" font-size="18" font-weight="bold">📋</text>
+                        <text x="115" y="140" fill="#4A148C" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="700">Comprehensive Housekeeping Vetting</text>
+                        <text x="115" y="160" fill="#6C757D" font-family="'Segoe UI', sans-serif" font-size="12">Sanitation, laundering systems, and spatial organizing</text>
+                        
+                        <rect x="40" y="200" width="420" height="70" rx="8" fill="#FDFBFF" stroke="#E6D5F5" stroke-width="1.5"/>
+                        <circle cx="75" cy="235" r="20" fill="#F3E5F5"/>
+                        <text x="69" y="241" fill="#7B2CBF" font-size="18" font-weight="bold">🍳</text>
+                        <text x="115" y="230" fill="#4A148C" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="700">Culinary Adaptability Training</text>
+                        <text x="115" y="250" fill="#6C757D" font-family="'Segoe UI', sans-serif" font-size="12">Pre-departure orientation for traditional Gulf menus</text>
+                        
+                        <rect x="40" y="290" width="420" height="70" rx="8" fill="#FDFBFF" stroke="#E6D5F5" stroke-width="1.5"/>
+                        <circle cx="75" cy="325" r="20" fill="#F3E5F5"/>
+                        <text x="69" y="331" fill="#7B2CBF" font-size="18" font-weight="bold">🛡️</text>
+                        <text x="115" y="320" fill="#4A148C" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="700">Legal Medical & Age Attestation</text>
+                        <text x="115" y="340" fill="#6C757D" font-family="'Segoe UI', sans-serif" font-size="12">Verified age parameters strictly above 21 years old</text>
+                    </svg>
                 </div>
                 <div>
                     <h4 style="color: var(--dark-purple); margin-bottom: 15px; font-weight: 700;">Candidate Profiles & Capabilities</h4>
