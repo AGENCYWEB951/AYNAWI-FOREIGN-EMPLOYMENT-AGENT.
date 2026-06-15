@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYNAWI Foreign Employment Agent</title>
+    <style>
+        /* Global Styles & Variables */
+        :root {
+            --primary-purple: #7B2CBF;
+            --dark-purple: #4A148C;
+            --light-bg: #F8F9FA;
+            --white: #FFFFFF;
+            --text-dark: #212529;
+            --text-muted: #6C757D;
+            --border-color: #DEE2E6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* --- MODERN ANIMATIONS KEYFRAMES --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomInEffect {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Navigation Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-box {
+            width: 75px;
+            height: 60px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: var(--white);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-box:hover {
+            transform: scale(1.08) rotate(2deg);
+        }
+
+        .logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .brand-name h1 {
+            font-size: 1.2rem;
+            color: var(--dark-purple);
+            text-transform: uppercase;
+        }
+
+        .brand-name p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary-purple);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-purple);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            background-color: var(--primary-purple);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(123, 44, 191, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(243, 229, 245, 0.9), rgba(225, 190, 231, 0.9));
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            color: var(--dark-purple);
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+            color: #212121;
+            font-weight: 500;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .hero .btn {
+            animation: fadeInUp 1.2s ease-out forwards;
+        }
+
+        .badge-box {
+            background-color: var(--white);
+            border-left: 5px solid var(--primary-purple);
+            padding: 15px;
+            display: inline-block;
+            margin-top: 25px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: left;
+            animation: zoomInEffect 1.3s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+        }
+
+        /* Reveal Section Animations */
+        section {
+            padding: 80px 0;
+            background-color: var(--white);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--light-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--dark-purple);
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-purple);
+            display: block;
+            margin: 10px auto 0 auto;
+            transition: width 0.4s ease;
+        }
+
+        section:hover
